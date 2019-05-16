@@ -1,0 +1,6 @@
+{
+    "name": "gaurav/arweave-upload",
+    "require": {
+        "arweave/arweave-sdk": "^0.2.0"
+    }
+}
