@@ -22,6 +22,9 @@ function airweave_upload_onremove(){
   <?php submit_button();?>
 </form>
 
+<h3><b>NOTE:</b> Uninstalling the plugin will remove the transaction data from the
+  Wordpress database. Make sure to save the transaction IDs somewhere
+  if you want to find them in the future. </h3>
 <h1>Post Transaction ID Table</h1>
 <table cellpadding="10" border="1">
   <tr>
