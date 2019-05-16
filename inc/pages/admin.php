@@ -27,7 +27,7 @@ class ArweaveUploadAdmin{
     array($this, 'arweave_upload_key_button'), 'arweave_upload',
     'arweave-upload-options');
 
-    add_settings_field('arweave-key', "Processed Key File:",
+    add_settings_field('arweave-key', "Current Key File:",
     array($this, 'arweave_upload_key'), 'arweave_upload',
     'arweave-upload-options');
 
@@ -43,8 +43,12 @@ class ArweaveUploadAdmin{
 
   function arweave_upload_key(){
     $keyfile = esc_attr(get_option("keyfile"));
-    echo '<input type="text" name="keyfile" id="keyfile" value='. $keyfile .
-    ' readonly/>';
+
+    $value = '';
+    if($keyfile !== ''){
+        $value = 'value=' . $keyfile;
+    }
+    echo '<input type="text" name="keyfile" id="keyfile" '. $value .' readonly/>';
   }
 
   function arweave_upload_key_button(){

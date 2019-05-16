@@ -37,10 +37,9 @@ function airweave_upload_onremove(){
 
   // The Loop
   if ( $the_query->have_posts() ) {
-    echo '<tr>';
       $posts = $the_query->posts;
       foreach ($posts as $post) {
-
+        echo '<tr>';
         $custom_fields = get_post_custom($post->ID);
         $field = $custom_fields['arweave_txn_id'];
 
@@ -51,8 +50,8 @@ function airweave_upload_onremove(){
 
         echo '<th>' . $post->post_title . '</th>';
         echo '<th>' . $field_display . '</th>';
+        echo '<tr>';
       }
-    echo '</tr>';
   }
 
  ?>
