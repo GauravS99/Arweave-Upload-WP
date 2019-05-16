@@ -13,6 +13,9 @@ class ArweaveUploadUninstall{
     foreach ($posts as $post) {
       delete_post_meta($post->ID, 'arweave_txn_id');
     }
+
+    unregister_setting( 'arweave-upload-group', 'keyfile');
+
   }
 
 }
