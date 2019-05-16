@@ -37,7 +37,7 @@ class ArweaveUploadAdmin{
     array($this, 'arweave_upload_remove_button'), 'arweave_upload',
     'arweave-upload-options');
 
-    add_settings_field('arweave-node', "Provide any valid Arweave node hostname or IP address:",
+    add_settings_field('arweave-node', "Any valid Arweave node hostname or IP address (leave as default if unsure):",
     array($this, 'arweave_upload_hostname'), 'arweave_upload',
     'arweave-upload-options');
 

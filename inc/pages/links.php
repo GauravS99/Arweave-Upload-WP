@@ -7,7 +7,6 @@ class ArweaveUploadLinks{
   }
 
   public function settings_link($links){
-    error_log("hello2");
     $settings_link = '<a href="admin.php?page=arweave_upload">
     Settings<a>';
     array_push($links, $settings_link);

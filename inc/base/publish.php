@@ -33,8 +33,6 @@ class ArweaveUploadPublish{
         ]
       ]);
 
-      error_log(json_encode($transaction->getAttributes()));
-
       $transaction_id = $transaction->getAttribute('id');
 
       $meta_key = 'arweave_txn_id';
@@ -65,7 +63,7 @@ class ArweaveUploadPublish{
     $wallet = NULL;
 
     try{
-      $wallet = new Arweave\SDK\Support\Wallet(json_decode($keyfile, true);
+      $wallet = new Arweave\SDK\Support\Wallet(json_decode($keyfile, true));
     }
     catch(Exception $e){
       error_log("Caught Exception: {$e->getMessage()}");

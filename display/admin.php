@@ -4,13 +4,13 @@ function airweave_upload_handleFiles(files){
   var fr = new FileReader()
   fr.onload = function (ev) {
     //wallet = JSON.parse(ev.target.result)
-    document.getElementById("keyfile").value = ev.target.result;
+    document.getElementById("arweave-upload-keyfile").value = ev.target.result;
   }
   fr.readAsText(files[0])
 }
 
 function airweave_upload_onremove(){
-  document.getElementById("keyfile").value = "";
+  document.getElementById("arweave-upload-keyfile").value = "";
 }
 
 </script>
@@ -26,12 +26,12 @@ function airweave_upload_onremove(){
   <?php submit_button();?>
 </form>
 
-<h3><b>NOTE:</b> Uninstalling the plugin will remove the transaction data from the
-  Wordpress database. Make sure to save the transaction IDs somewhere
-  if you want to find them in the future. </h3>
+<h3 style="margin-bottom:30px;"><b>NOTE:</b> Uninstalling the plugin will remove the transaction data from the
+  Wordpress database. Make sure to save the transaction IDs below
+if you want to find them in the future. </h3>
 
 <h3 style="margin-bottom:30px;">If your post does not show up in this table, something went wrong with
-uploading it to the Arweave
+uploading it to the Arweave. Please report any issues on the GitHub page!
  </h3>
 
 <h1>Post Transaction ID Table</h1>
