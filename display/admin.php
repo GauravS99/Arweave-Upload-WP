@@ -15,12 +15,11 @@ function airweave_upload_onremove(){
 
 </script>
 
-<h3 style="margin-bottom: 40px">Once the following settings are properly configured, each publish (including revisions)
-  will be backed up to the Arweave.
- </h3>
-
 <?php settings_errors();?>
 <form method="post" action="options.php">
+  <h3 style="margin-bottom: 40px">Once the following settings are properly configured, each publish (including revisions)
+    will be backed up to the Arweave.
+   </h3>
   <?php settings_fields('arweave-upload-group'); ?>
   <?php do_settings_sections('arweave_upload'); ?>
   <?php submit_button();?>
