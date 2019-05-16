@@ -20,7 +20,6 @@ class ArweaveUploadAdmin{
   function add_custom_settings(){
     register_setting('arweave-upload-group', 'arweave-upload-keyfile');
     register_setting('arweave-upload-group', 'arweave-upload-hostname');
-    update_option('arweave-upload-hostname',  ARWEAVE_UPLOAD_HOSTNAME);
 
     add_settings_section('arweave-upload-options', 'Arweave Upload Settings',
     array($this, 'arweave_upload_options'), 'arweave_upload');
@@ -33,7 +32,7 @@ class ArweaveUploadAdmin{
     array($this, 'arweave_upload_key'), 'arweave_upload',
     'arweave-upload-options');
 
-    add_settings_field('arweave-key-remove', "Remove Key File:",
+    add_settings_field('arweave-key-remove', "Clear Key File:",
     array($this, 'arweave_upload_remove_button'), 'arweave_upload',
     'arweave-upload-options');
 
@@ -62,7 +61,7 @@ class ArweaveUploadAdmin{
   }
 
   function arweave_upload_remove_button(){
-    echo '<input type="button"  onclick="airweave_upload_onremove()" value="Remove"/>';
+    echo '<input type="button"  onclick="airweave_upload_onremove()" value="Clear"/>';
   }
 
   function arweave_upload_hostname(){

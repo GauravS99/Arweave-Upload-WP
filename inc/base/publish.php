@@ -16,6 +16,10 @@ class ArweaveUploadPublish{
 
       $hostname = get_option("arweave-upload-hostname");
 
+      if(!$hostname){
+        $hostname = ARWEAVE_UPLOAD_HOSTNAME;
+      }
+
       $arweave = new \Arweave\SDK\Arweave('http', $hostname, 1984);
 
       $wallet = $this-> get_wallet();

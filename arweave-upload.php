@@ -5,7 +5,7 @@
 /*
 Plugin Name: Arweave Upload
 Plugin URI:
-Description: This plugin will submits a permanent backup of each post to the Arweave when the user presses ‘Publish’
+Description: This plugin will submits a permanent backup of each post (or revision) to the Arweave when the user presses ‘Publish’.
 Version: 1.0.0
 Author: Gaurav Sharma
 Author URI: https://github.com/GauravS99
