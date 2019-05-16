@@ -20,5 +20,5 @@ foreach ($posts as $post) {
   delete_post_meta($post->ID, 'arweave_txn_id');
 }
 
-unregister_setting( 'arweave-upload-group', 'arweave-upload-keyfile');
-unregister_setting( 'arweave-upload-group', 'arweave-upload-hostname');
+delete_option('arweave-upload-keyfile');
+delete_option('arweave-upload-hostname');

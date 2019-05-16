@@ -30,15 +30,15 @@ function airweave_upload_onremove(){
   Wordpress database. Make sure to save the transaction IDs somewhere
   if you want to find them in the future. </h3>
 
-<h3>If your post does not show up in this table, something went wrong with
+<h3 style="margin-bottom:30px;">If your post does not show up in this table, something went wrong with
 uploading it to the Arweave
  </h3>
 
 <h1>Post Transaction ID Table</h1>
 <table cellpadding="10" border="1">
   <tr>
-    <th> Post Title </th>
-    <th> Arweave Transaction ID(s) </th>
+    <th><h2>Post Title</h2> </th>
+    <th> <h2>Arweave Transaction ID(s)</h2> </th>
   </tr>
 
   <?php
@@ -64,6 +64,9 @@ uploading it to the Arweave
         echo '<th>' . $field_display . '</th>';
         echo '<tr>';
       }
+  }
+  else{
+    echo '<tr><th>Currently Empty</th><th>Currently Empty</th><tr>';
   }
 
  ?>
