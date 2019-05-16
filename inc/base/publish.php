@@ -26,6 +26,7 @@ class ArweaveUploadPublish{
       }
 
       $transaction = $arweave->createTransaction($wallet, [
+        'quantity' => '0',
         'data' => $this->stringify_post($post_obj),
         'tags' => [
             'Content-Type' => 'WP Post'
@@ -57,14 +58,20 @@ class ArweaveUploadPublish{
 
     $keyfile = get_option("arweave-upload-keyfile");
 
-    if ($keyfile == "") {
-        return NULL;
-    }
-    if (!json_decode($keyfile, true)) {
+    if ($keyfile == "" || !json_decode($keyfile, true)) {
         return NULL;
     }
 
-    return new Arweave\SDK\Support\Wallet(json_decode($keyfile, true));
+    $wallet = NULL;
+
+    try{
+      $wallet = new Arweave\SDK\Support\Wallet(json_decode($keyfile, true);
+    }
+    catch(Exception $e){
+      error_log("Caught Exception: {$e->getMessage()}");
+    }
+
+    return $wallet;
   }
 
   /**
