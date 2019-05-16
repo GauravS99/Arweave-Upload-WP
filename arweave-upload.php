@@ -43,10 +43,10 @@ if(!defined('ABSPATH')){
 
 define('ARWEAVE_UPLOAD_PLUGIN_PATH', plugin_dir_path(__FILE__));
 define('ARWEAVE_UPLOAD_BASENAME',  plugin_basename(__FILE__));
+define('ARWEAVE_UPLOAD_HOSTNAME',  '159.65.213.43'); //default
 
 require_once ARWEAVE_UPLOAD_PLUGIN_PATH . 'inc/base/activate.php';
 require_once ARWEAVE_UPLOAD_PLUGIN_PATH . 'inc/base/deactivate.php';
-require_once ARWEAVE_UPLOAD_PLUGIN_PATH . 'inc/base/uninstall.php';
 
 function activate_arweave_upload(){
    ArweaveUploadActivate::activate();
@@ -56,16 +56,11 @@ function deactivate_arweave_upload(){
   ArweaveUploadDeactivate::deactivate();
 }
 
-$uninstall = new ArweaveUploadUninstall();
-
 //activation
 register_activation_hook(__FILE__, 'activate_arweave_upload');
 
 //deactivation
 register_deactivation_hook(__FILE__, 'deactivate_arweave_upload');
-
-//uninstall
-register_uninstall_hook(__FILE__, array($uninstall, 'uninstall'));
 
 require_once ARWEAVE_UPLOAD_PLUGIN_PATH . 'inc/init.php';
 

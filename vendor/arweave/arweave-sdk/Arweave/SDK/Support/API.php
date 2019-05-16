@@ -24,7 +24,7 @@ class API
 
     /**
      * Network port to use.
-     * 
+     *
      * Default should be 1984, 443, or 80
      *
      * @var string
@@ -48,11 +48,11 @@ class API
         if (!$protocol) {
             throw new Exception('No Protocol specified');
         }
-    
+
         if (!$host) {
             throw new Exception('No host specified');
         }
-    
+
         if (!$port) {
             throw new Exception('No Port specified');
         }
@@ -84,7 +84,7 @@ class API
      * @param  string $transaction_id
      *
      * @throws TransactionNotFoundException
-     * 
+     *
      * @return mixed|null
      */
     public function getTransaction(string $transaction_id)
@@ -94,11 +94,11 @@ class API
 
     /**
      * Get a transaction's status by its ID.
-     * 
+     *
      * String values for pending transactions, e.g. "Pending".
-     * 
+     *
      * Assoc array with the block info if the transaction has been accepted, e.g.
-     * 
+     *
      * array(3) {
      *   ["block_indep_hash"]=>
      *   string(64) "hJm2wxoAgneZdRNy2dDFLZnNGlImsSjkhEytC1g2H8GJBzoef5bqi5dlkCzT4HUl"
@@ -107,11 +107,11 @@ class API
      *   ["number_of_confirmations"]=>
      *   int(8)
      * }
-     * 
+     *
      * @param  string $transaction_id
      *
      * @throws TransactionNotFoundException
-     * 
+     *
      * @return string[]|string
      */
     public function getTransactionStatus(string $transaction_id)
@@ -125,7 +125,7 @@ class API
      * @param  string $transaction_id
      *
      * @throws TransactionNotFoundException
-     * 
+     *
      * @return mixed|null
      */
     public function getTransactionData(string $transaction_id)
@@ -247,7 +247,7 @@ class API
                 $response
             ));
         }
-        
+
 
         if (!in_array($status, [200, 202] )) {
             throw new Exception(sprintf("Arweave API - Unexpected response (%s)

@@ -13,7 +13,10 @@ class ArweaveUploadPublish{
   function arweave_upload($id, $post_obj){
 
     try{
-      $arweave = new \Arweave\SDK\Arweave('http', '159.65.213.43', 1984);
+
+      $hostname = get_option("arweave-upload-hostname");
+
+      $arweave = new \Arweave\SDK\Arweave('http', $hostname, 1984);
 
       $wallet = $this-> get_wallet();
 
@@ -28,6 +31,8 @@ class ArweaveUploadPublish{
             'Content-Type' => 'WP Post'
         ]
       ]);
+
+      error_log(json_encode($transaction->getAttributes()));
 
       $transaction_id = $transaction->getAttribute('id');
 
@@ -50,7 +55,7 @@ class ArweaveUploadPublish{
   */
   function get_wallet(){
 
-    $keyfile = get_option("keyfile");
+    $keyfile = get_option("arweave-upload-keyfile");
 
     if ($keyfile == "") {
         return NULL;

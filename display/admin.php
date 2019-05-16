@@ -15,6 +15,10 @@ function airweave_upload_onremove(){
 
 </script>
 
+<h3 style="margin-bottom: 40px">Once the following settings are properly configured, each publish (including revisions)
+  will be backed up to the Arweave.
+ </h3>
+
 <?php settings_errors();?>
 <form method="post" action="options.php">
   <?php settings_fields('arweave-upload-group'); ?>
@@ -25,6 +29,11 @@ function airweave_upload_onremove(){
 <h3><b>NOTE:</b> Uninstalling the plugin will remove the transaction data from the
   Wordpress database. Make sure to save the transaction IDs somewhere
   if you want to find them in the future. </h3>
+
+<h3>If your post does not show up in this table, something went wrong with
+uploading it to the Arweave
+ </h3>
+
 <h1>Post Transaction ID Table</h1>
 <table cellpadding="10" border="1">
   <tr>
