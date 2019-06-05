@@ -3,19 +3,20 @@
 * @package arweave-upload
 */
 /*
-Plugin Name: Arweave Upload
-Plugin URI:
-Description: This plugin will submits a permanent backup of each post (or revision) to the Arweave when the user presses ‘Publish’.
+Plugin Name: Backup to Arweave
+Plugin URI: https://github.com/GauravS99/Arweave-Upload-WP
+Description: This plugin will use your Arweave keyfile and tokens to submit a permanent backup of each post (or revision) to the Arweave when the user presses ‘Publish’. For information on Arweave and the permaweb, please visit https://www.arweave.org/.
 Version: 1.0.0
 Author: Gaurav Sharma
 Author URI: https://github.com/GauravS99
 License: GPLv2 or later
-Text Domain: arweave-upload
 */
 /*
 
-Arweave Upload is a WordPress plugin that will submit a
-permanent backup of each post to the Arweave when the user presses ‘Publish’
+Backup to Arweave is a WordPress plugin that will use your Arweave tokens to submit a
+permanent backup of each post to the Arweave when the user presses ‘Publish’.
+It will also create a list of transaction ids so that you can find the data you've saved later on.
+For more information about Arweave and the permaweb, visit https://www.arweave.org/.
 
 Copyright (C) 2019 Automattic, Inc.
 
